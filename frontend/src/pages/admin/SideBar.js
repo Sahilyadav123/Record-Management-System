@@ -59,6 +59,7 @@ const SideBar = () => {
                     </ListItemIcon>
                     <ListItemText primary="Complains" />
                 </ListItemButton>
+                
             </React.Fragment>
             <Divider sx={{ my: 1 }} />
             <React.Fragment>

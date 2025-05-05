@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 import { getAllSclasses } from '../../redux/sclassRelated/sclassHandle';
 import { getAllStudents } from '../../redux/studentRelated/studentHandle';
 import { getAllTeachers } from '../../redux/teacherRelated/teacherHandle';
+import { Button } from '@mui/material';
 
 const AdminHomePage = () => {
     const dispatch = useDispatch();
@@ -65,11 +66,20 @@ const AdminHomePage = () => {
                     </Grid>
                     <Grid item xs={12} md={3} lg={3}>
                         <StyledPaper>
-                            <img src={Fees} alt="Fees" />
-                            <Title>
-                                Fees Collection
-                            </Title>
-                            <Data start={0} end={23000} duration={2.5} prefix="$" />                        </StyledPaper>
+                        <Button 
+    variant="contained" 
+    onClick={() => window.location.href = 'https://certificate-filter.onrender.com/'} 
+    style={{ 
+        backgroundColor: "#007BFF", 
+        color: "white", 
+        padding: "10px 20px", 
+        margin: "10px", 
+        fontSize: "16px" 
+    }}
+>
+    View Filter Option
+</Button>
+                      </StyledPaper>
                     </Grid>
                     <Grid item xs={12} md={12} lg={12}>
                         <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>

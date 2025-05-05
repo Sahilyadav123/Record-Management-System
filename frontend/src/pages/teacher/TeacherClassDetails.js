@@ -39,7 +39,7 @@ const TeacherClassDetails = () => {
     })
 
     const StudentsButtonHaver = ({ row }) => {
-        const options = ['Take Attendance', 'Provide Marks'];
+        const options = ['Take Attendance', 'Provide Marks','View Certificates'];
 
         const [open, setOpen] = React.useState(false);
         const anchorRef = React.useRef(null);
@@ -64,6 +64,11 @@ const TeacherClassDetails = () => {
         const handleMenuItemClick = (event, index) => {
             setSelectedIndex(index);
             setOpen(false);
+
+            const id = row?.id;
+            if(index === 2){
+                navigate(`/Teacher/class/student/certificate/${id}`)
+            }
         };
 
         const handleToggle = () => {
@@ -125,7 +130,7 @@ const TeacherClassDetails = () => {
                                             {options.map((option, index) => (
                                                 <MenuItem
                                                     key={option}
-                                                    disabled={index === 2}
+                                                    disabled={index === 3}
                                                     selected={index === selectedIndex}
                                                     onClick={(event) => handleMenuItemClick(event, index)}
                                                 >
